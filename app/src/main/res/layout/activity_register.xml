@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2CA7E0"
+    android:background="#000"
     tools:context=".LogInActivity">
 
     <LinearLayout
@@ -15,16 +15,16 @@
         android:layout_margin="20dp">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_directions_bike_black_24dp"
+            android:src="@drawable/ic_bikes"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register"
-            android:textColor="#fff"
+            android:textColor="#ff9800"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
@@ -36,12 +36,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="username"
-            android:textColorHint="#fff"
+            android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/edit"
-            android:padding="15dp"
+            android:padding="8dp"
             android:inputType="text"/>
         <EditText
             android:id="@+id/email"
@@ -49,12 +49,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="email"
-            android:textColorHint="#fff"
+            android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit"
-            android:padding="15dp"
+            android:padding="8dp"
             android:inputType="text"/>
         <EditText
             android:id="@+id/password"
@@ -62,12 +62,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="password"
-            android:textColorHint="#fff"
+            android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit"
-            android:padding="15dp"
+            android:padding="8dp"
             android:inputType="textPassword"/>
         <EditText
             android:id="@+id/noktp"
@@ -75,12 +75,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="noktp"
-            android:textColorHint="#fff"
+            android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit"
-            android:padding="15dp"
+            android:padding="8dp"
             android:inputType="text"/>
         <EditText
             android:id="@+id/address"
@@ -88,21 +88,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="address"
-            android:textColorHint="#fff"
+            android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit"
-            android:padding="15dp"
+            android:padding="8dp"
             android:inputType="text"/>
         <Button
             android:id="@+id/register"
             android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:text="Register"
             android:layout_marginTop="30dp"
-            android:textColor="#2CA7E0"
+            android:textColor="#fff"
             android:background="@drawable/button"
             />
         <TextView
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="#fff"
+            android:textColor="#ff9800"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"

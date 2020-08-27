@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Log in"
+            android:text="Forget Password"
             android:textColor="#ff9800"
             android:textStyle="bold"
             android:layout_gravity="center"
@@ -31,11 +31,11 @@
             android:textSize="25dp"
             />
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="username"
+            android:hint="Email"
             android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
@@ -43,48 +43,22 @@
             android:background="@drawable/edit"
             android:padding="10dp"
             android:inputType="text"/>
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="Password"
-            android:textColorHint="#000"
-            android:drawableLeft="@drawable/ic_baseline_remove_red_eye_24"
-            android:drawablePadding="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/edit"
-            android:padding="10dp"
-            android:inputType="textPassword"/>
 
-        <TextView
-            android:id="@+id/forget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forget Password?"
-            android:textColor="#ff9800"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="right"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:textSize="16dp"
-            android:layout_marginRight="20dp"
-            />
         <Button
-            android:id="@+id/login"
+            android:id="@+id/enter"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="Login"
+            android:text="Enter"
             android:layout_marginTop="30dp"
             android:textColor="#fff"
             android:background="@drawable/button"
             />
         <TextView
-            android:id="@+id/register"
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Go Back"
             android:textColor="#ff9800"
             android:textStyle="bold"
             android:layout_gravity="center"

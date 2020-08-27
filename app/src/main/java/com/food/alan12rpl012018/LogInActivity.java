@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class LogInActivity extends AppCompatActivity {
     TextView textView;
     Button button;
+    TextView forget;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,14 @@ public class LogInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LogInActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        forget = findViewById(R.id.forget);
+        forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogInActivity.this,ForgetPassActivity.class);
                 startActivity(intent);
             }
         });
