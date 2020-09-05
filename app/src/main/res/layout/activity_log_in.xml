@@ -31,11 +31,11 @@
             android:textSize="25dp"
             />
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="username"
+            android:hint="email"
             android:textColorHint="#000"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
