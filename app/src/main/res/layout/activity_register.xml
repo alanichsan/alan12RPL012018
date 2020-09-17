@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
-    tools:context=".LogInActivity">
-
+    android:background="#000">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,6 +18,7 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_bikes"
             />
@@ -130,5 +132,5 @@
             android:textSize="18dp"
             tools:ignore="OnClick" />
     </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>

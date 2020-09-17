@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
                 body.put("nohp", nohp);
                 body.put("alamat", alamat);
                 body.put("role", "1");
-                AndroidNetworking.post("http://192.168.6.89/tugas_api/register.php")
+                AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/register.php")
                         .addBodyParameter(body)
                         .setPriority(Priority.MEDIUM)
                         .build()
@@ -73,8 +73,8 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 Log.d("ALN" , response.toString());
-                                String status = response.optString("status");
-                                String message = response.optString("mesagge");
+                                String status = response.optString("STATUS");
+                                String message = response.optString("MESAGGE");
                                 if (status.equalsIgnoreCase("SUCCESS")) {
                                     Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
                                     startActivity(intent);

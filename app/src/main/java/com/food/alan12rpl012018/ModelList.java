@@ -11,8 +11,6 @@ public class ModelList {
         this.jumlah = jumlah;
         this.jenis = jenis;
         this.code = code;
-
-
     }
 
     public String getNama() {

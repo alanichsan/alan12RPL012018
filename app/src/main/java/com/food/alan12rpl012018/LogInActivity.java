@@ -56,7 +56,7 @@ public class LogInActivity extends AppCompatActivity {
                 body.put("email", email);
                 body.put("password", password);
 
-                AndroidNetworking.post("http://192.168.6.89/tugas_api/login.php")
+                AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/login.php")
                         .addBodyParameter(body)
                         .setPriority(Priority.MEDIUM)
                         .build()
@@ -64,8 +64,8 @@ public class LogInActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 Log.d("ALN" , response.toString());
-                                String status = response.optString("status");
-                                String message = response.optString("mesagge");
+                                String status = response.optString("STATUS");
+                                String message = response.optString("MESAGGE");
                                 if (status.equalsIgnoreCase("SUCCESS")) {
                                     JSONObject payload = response.optJSONObject("PAYLOAD");
                                     String LOGIN_ID = payload.optString("LOGIN_ID");
@@ -75,9 +75,9 @@ public class LogInActivity extends AppCompatActivity {
                                     String ALAMAT = payload.optString("ALAMAT");
                                     String ROLE = payload.optString("ROLE");
 
-                                    preferences = getSharedPreferences("db_rentalsepeda", Context.MODE_PRIVATE);
+                                    preferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
                                     preferences.edit()
-                                            .putString(LOGIN_ID, LOGIN_ID)
+                                            .putString("LOGIN_ID", LOGIN_ID)
                                             .putString(LOGIN_NAME, LOGIN_NAME)
                                             .putString(NOMOR_HP, NOMOR_HP)
                                             .putString(NOMOR_KTP, NOMOR_KTP)
@@ -90,7 +90,7 @@ public class LogInActivity extends AppCompatActivity {
                                         Toast.makeText(LogInActivity.this, message, Toast.LENGTH_SHORT).show();
                                         finish();
                                     }else if (ROLE.equalsIgnoreCase("admin")){
-                                        Intent intent = new Intent(LogInActivity.this, DashboardActivity.class);
+                                        Intent intent = new Intent(LogInActivity.this, ListCustomerActivity.class);
                                         startActivity(intent);
                                         Toast.makeText(LogInActivity.this, message, Toast.LENGTH_SHORT).show();
                                         finish();
@@ -103,7 +103,7 @@ public class LogInActivity extends AppCompatActivity {
                             @Override
                             public void onError(ANError error) {
                                 Log.d("anError", error.getLocalizedMessage());
-                                Toast.makeText(getApplicationContext(),"Gagal",Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(),"Gagal",Toast. LENGTH_SHORT).show();
                             }
                         });
             }
