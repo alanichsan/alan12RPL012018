@@ -127,7 +127,7 @@ public class CustomersAdapter extends RecyclerView.Adapter<CustomersAdapter.Cust
                         public void onClick(View v) {
                             String u_id = mData.get(getAdapterPosition()).getId();
                             if (mContext instanceof ListCustomerActivity) {
-//                                ((ListCustomerActivity)mContext).deleteData(u_id);
+                                ((ListCustomerActivity)mContext).deleteData(u_id);
                             }
                         }
                     });

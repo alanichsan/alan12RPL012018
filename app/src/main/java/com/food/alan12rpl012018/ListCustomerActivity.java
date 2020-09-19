@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -60,7 +61,7 @@ public class ListCustomerActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final String id = sharedPreferences.getString("LOGIN_ID", "");
         System.out.println(id + "oii");
-        AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/show_user.php")
+        AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/show_user.php")
                 .addBodyParameter("id", id)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -120,15 +121,15 @@ public class ListCustomerActivity extends AppCompatActivity {
 
     public void editData(String id, String username, String nohp, String noktp,String alamat) {
         sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
-        final String id_auth = sharedPreferences.getString("id", "");
+        final String id_auth = sharedPreferences.getString("LOGIN_ID", "");
         HashMap<String, String> body = new HashMap<>();
-        body.put("id_auth", id_auth);
+        body.put("id_auth", "2");
         body.put("id", id);
         body.put("noktp", noktp);
         body.put("nama", username);
         body.put("nohp", nohp);
         body.put("alamat", alamat);
-        AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/edit_user.php")
+        AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/edit_user.php")
                 .addBodyParameter(body)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -140,6 +141,8 @@ public class ListCustomerActivity extends AppCompatActivity {
                         String message = response.optString("MESSAGE");
                         if (status.equalsIgnoreCase("SUCCESS")) {
                             Toast.makeText(ListCustomerActivity.this, message, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ListCustomerActivity.this,ListCustomerActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(ListCustomerActivity.this, message, Toast.LENGTH_SHORT).show();
 
@@ -149,22 +152,23 @@ public class ListCustomerActivity extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         Toast.makeText(ListCustomerActivity.this, "Kesalahan Internal", Toast.LENGTH_SHORT).show();
-                        Log.d("Soy", "onError: " + anError.getErrorBody());
-                        Log.d("Soy", "onError: " + anError.getLocalizedMessage());
-                        Log.d("Soy", "onError: " + anError.getErrorDetail());
-                        Log.d("Soy", "onError: " + anError.getResponse());
-                        Log.d("Soy", "onError: " + anError.getErrorCode());
+                        Log.d("ALN", "onError: " + anError.getErrorBody());
+                        Log.d("ALN", "onError: " + anError.getLocalizedMessage());
+                        Log.d("ALN", "onError: " + anError.getErrorDetail());
+                        Log.d("ALN", "onError: " + anError.getResponse());
+                        Log.d("ALN", "onError: " + anError.getErrorCode());
+                        Log.d("ALN", "onError: " + anError.toString());
                     }
                 });
     }
 
     public void deleteData(String id) {
         sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
-        final String id_auth = sharedPreferences.getString("id", "");
+        final String id_auth = sharedPreferences.getString("LOGIN_ID", "");
         HashMap<String, String> body = new HashMap<>();
         body.put("id_auth", id_auth);
         body.put("id", id);
-        AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/delete_user.php")
+        AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/delete_user.php")
                 .addBodyParameter(body)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -176,6 +180,8 @@ public class ListCustomerActivity extends AppCompatActivity {
                         String message = response.optString("MESSAGE");
                         if (status.equalsIgnoreCase("SUCCESS")) {
                             Toast.makeText(ListCustomerActivity.this, message, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ListCustomerActivity.this,ListCustomerActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(ListCustomerActivity.this, message, Toast.LENGTH_SHORT).show();
 
@@ -185,11 +191,11 @@ public class ListCustomerActivity extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         Toast.makeText(ListCustomerActivity.this, "Kesalahan Internal", Toast.LENGTH_SHORT).show();
-                        Log.d("Soy", "onError: " + anError.getErrorBody());
-                        Log.d("Soy", "onError: " + anError.getLocalizedMessage());
-                        Log.d("Soy", "onError: " + anError.getErrorDetail());
-                        Log.d("Soy", "onError: " + anError.getResponse());
-                        Log.d("Soy", "onError: " + anError.getErrorCode());
+                        Log.d("ALN", "onError: " + anError.getErrorBody());
+                        Log.d("ALN", "onError: " + anError.getLocalizedMessage());
+                        Log.d("ALN", "onError: " + anError.getErrorDetail());
+                        Log.d("ALN", "onError: " + anError.getResponse());
+                        Log.d("ALN", "onError: " + anError.getErrorCode());
                     }
                 });
     }

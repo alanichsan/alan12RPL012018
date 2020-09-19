@@ -56,7 +56,7 @@ public class LogInActivity extends AppCompatActivity {
                 body.put("email", email);
                 body.put("password", password);
 
-                AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/login.php")
+                AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/login.php")
                         .addBodyParameter(body)
                         .setPriority(Priority.MEDIUM)
                         .build()

@@ -6,12 +6,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.LinearLayout;
+
+import com.wang.avi.AVLoadingIndicatorView;
 
 public class SplashscreenActivity2 extends AppCompatActivity {
     private static int SplashScreen = 1150;
 
     private String id;
-
+    //pembuatan variabel untuk linearlayout
+    private LinearLayout lv_loading;
+    private AVLoadingIndicatorView avi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +24,10 @@ public class SplashscreenActivity2 extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         id = sharedPreferences.getString("id", "");
-
+        lv_loading = (LinearLayout) findViewById(R.id.lv_loading);
+        avi= (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.setIndicator("BallClipRotateMultipleIndicator");
+        //membuat sebuah proses yang ter delay
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -34,6 +42,5 @@ public class SplashscreenActivity2 extends AppCompatActivity {
                 }
             }
         }, SplashScreen);
-
     }
 }

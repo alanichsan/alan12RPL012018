@@ -24,10 +24,6 @@ import java.util.HashMap;
 public class RegisterActivity extends AppCompatActivity {
     TextView textView;
     Button button;
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String ID = "id";
-    public static final String USERNAME = "username";
-    private SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +52,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String noktp = txtnoktp.getText().toString();
                 String alamat = txtalamat.getText().toString();
                 String pass = txtpass1.getText().toString();
+                String roleuser = "1";
+
 
                 HashMap<String, String> body = new HashMap<>();
                 body.put("noktp", noktp);
@@ -64,8 +62,8 @@ public class RegisterActivity extends AppCompatActivity {
                 body.put("nama", username1);
                 body.put("nohp", nohp);
                 body.put("alamat", alamat);
-                body.put("role", "1");
-                AndroidNetworking.post("http://192.168.1.18/sekolah/alan12RPL012018API/register.php")
+                body.put("roleuser", roleuser);
+                AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/register.php")
                         .addBodyParameter(body)
                         .setPriority(Priority.MEDIUM)
                         .build()
@@ -86,6 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             @Override
                             public void onError(ANError anError) {
+                                Log.d("asq" , anError.toString());
                                 Toast.makeText(RegisterActivity.this, "Kesalahan Internal", Toast.LENGTH_SHORT).show();
                             }
                         });

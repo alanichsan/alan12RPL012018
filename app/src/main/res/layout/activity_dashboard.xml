@@ -81,7 +81,7 @@
             android:id="@+id/icon_ar"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/customer"/>
+            android:src="@drawable/ic_store"/>
         <TextView
             android:id="@+id/customer"
             android:layout_width="match_parent"
@@ -89,7 +89,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@id/icon_ar"
-            android:text="Customer"
+            android:text="Store"
             android:textColor="#fff"
             android:textSize="20dp"/>
         <ImageView
@@ -155,4 +155,20 @@
             android:layout_centerVertical="true"
             android:src="@drawable/arrow_dark"/>
     </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/btnlogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="16dp"
+                android:text="Log Out"
+                android:textColor="#ff9800"
+                android:textSize="18dp" />
+        </RelativeLayout>
 </LinearLayout>

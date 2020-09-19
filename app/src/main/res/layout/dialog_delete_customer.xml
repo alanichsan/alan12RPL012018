@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#9CFFFFFF"
+    android:layout_marginHorizontal="20dp"
     app:cardCornerRadius="6dp">
 
     <LinearLayout
@@ -49,7 +51,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="0dp"
                     android:layout_toLeftOf="@id/btn_no"
-                    android:background="#000"
+                    android:background="#F44336"
                     android:padding="5dp"
                     android:text="Yes"
                     android:textColor="#fff"
@@ -61,10 +63,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="0dp"
-                    android:background="#000"
+                    android:background="#f5f5f5"
                     android:padding="5dp"
                     android:text="No"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:textSize="12dp" />
 
             </RelativeLayout>
