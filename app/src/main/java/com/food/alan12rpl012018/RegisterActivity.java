@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                 body.put("nohp", nohp);
                 body.put("alamat", alamat);
                 body.put("roleuser", roleuser);
-                AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/register.php")
+                AndroidNetworking.post("http://192.168.43.65/sekolah/alan12RPL012018API/register.php")
                         .addBodyParameter(body)
                         .setPriority(Priority.MEDIUM)
                         .build()

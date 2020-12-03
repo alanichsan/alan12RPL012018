@@ -56,7 +56,7 @@ public class LogInActivity extends AppCompatActivity {
                 body.put("email", email);
                 body.put("password", password);
 
-                AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/login.php")
+                AndroidNetworking.post("http://192.168.43.65/sekolah/alan12RPL012018API/login.php")
                         .addBodyParameter(body)
                         .setPriority(Priority.MEDIUM)
                         .build()
@@ -90,7 +90,7 @@ public class LogInActivity extends AppCompatActivity {
                                         Toast.makeText(LogInActivity.this, message, Toast.LENGTH_SHORT).show();
                                         finish();
                                     }else if (ROLE.equalsIgnoreCase("admin")){
-                                        Intent intent = new Intent(LogInActivity.this, ListCustomerActivity.class);
+                                        Intent intent = new Intent(LogInActivity.this, DashboardActivity2.class);
                                         startActivity(intent);
                                         Toast.makeText(LogInActivity.this, message, Toast.LENGTH_SHORT).show();
                                         finish();

@@ -3,45 +3,52 @@ package com.food.alan12rpl012018;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ModelAdapter adapter;
-    private ArrayList<ModelList> modelListArrayList;
+    private List<ModelAdapter> models = new ArrayList<>();
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addData();
+        getData();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        adapter = new ModelAdapter(modelListArrayList);
+        adapter = new ModelAdapter(getApplicationContext(),models);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
 
         recyclerView.setLayoutManager(layoutManager);
 
         recyclerView.setAdapter(adapter);
+
+        swipeRefreshLayout = findViewById(R.id.refreshlist);
+
+        swipeRefreshLayout.setRefreshing(false);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                models.clear();
+                getData();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
-    void addData(){
-        modelListArrayList = new ArrayList<>();
-        modelListArrayList.add(new ModelList("sepeda1", "polygon", "12", "4567"));
-        modelListArrayList.add(new ModelList("sepeda2", "polygon", "14", "4789"));
-        modelListArrayList.add(new ModelList("sepeda3", "polygon", "23", "1234"));
-        modelListArrayList.add(new ModelList("sepeda4", "polygon", "3", "6789"));
-        modelListArrayList.add(new ModelList("sepeda4", "polygon", "3", "6789"));
-        modelListArrayList.add(new ModelList("sepeda2", "polygon", "14", "4789"));
-        modelListArrayList.add(new ModelList("sepeda1", "polygon", "12", "4567"));
-        modelListArrayList.add(new ModelList("sepeda4", "polygon", "3", "6789"));
+    void getData(){
 
     }
 }

@@ -61,7 +61,7 @@ public class ListCustomerActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final String id = sharedPreferences.getString("LOGIN_ID", "");
         System.out.println(id + "oii");
-        AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/show_user.php")
+        AndroidNetworking.post("http://192.168.43.65/sekolah/alan12RPL012018API/show_user.php")
                 .addBodyParameter("id", id)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -129,7 +129,7 @@ public class ListCustomerActivity extends AppCompatActivity {
         body.put("nama", username);
         body.put("nohp", nohp);
         body.put("alamat", alamat);
-        AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/edit_user.php")
+        AndroidNetworking.post("http://192.168.43.65/sekolah/alan12RPL012018API/edit_user.php")
                 .addBodyParameter(body)
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -168,7 +168,7 @@ public class ListCustomerActivity extends AppCompatActivity {
         HashMap<String, String> body = new HashMap<>();
         body.put("id_auth", id_auth);
         body.put("id", id);
-        AndroidNetworking.post("http://192.168.6.89/sekolah/alan12RPL012018API/delete_user.php")
+        AndroidNetworking.post("http://192.168.43.65/sekolah/alan12RPL012018API/delete_user.php")
                 .addBodyParameter(body)
                 .setPriority(Priority.MEDIUM)
                 .build()

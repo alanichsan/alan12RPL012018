@@ -3,30 +3,34 @@ package com.food.alan12rpl012018;
 public class ModelList {
     private String code;
     private String jenis;
-    private String jumlah;
-    private String nama;
+    private String merk;
+    private String hargasewa;
+    private String warna;
 
-    public ModelList(String nama, String jenis, String jumlah, String code) {
-        this.nama = nama;
-        this.jumlah = jumlah;
+
+    public ModelList(String hargasewa, String jenis, String merk, String code, String warna) {
+        this.hargasewa = hargasewa;
+        this.merk = merk;
         this.jenis = jenis;
         this.code = code;
+        this.warna = warna;
+
     }
 
-    public String getNama() {
-        return nama;
+    public String getHargasewa() {
+        return hargasewa;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setHargasewa(String hargasewa) {
+        this.hargasewa = hargasewa;
     }
 
-    public String getJumlah() {
-        return jumlah;
+    public String getMerk() {
+        return merk;
     }
 
-    public void setJumlah(String jumlah) {
-        this.jumlah = jumlah;
+    public void setJumlah(String merk) {
+        this.merk = merk;
     }
 
     public String getJenis() {
@@ -42,5 +46,12 @@ public class ModelList {
 
     public void setCode(String code) {
         this.code = code;
+    }
+    public String getWarna() {
+        return warna;
+    }
+
+    public void setWarna(String warna) {
+        this.warna = warna;
     }
 }

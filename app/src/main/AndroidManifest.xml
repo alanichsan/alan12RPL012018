@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.food.alan12rpl012018">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".DashboardActivity2"></activity>
         <activity android:name=".SplashscreenActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +26,7 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".ForgetPassActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LogInActivity"/>
+        <activity android:name=".LogInActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

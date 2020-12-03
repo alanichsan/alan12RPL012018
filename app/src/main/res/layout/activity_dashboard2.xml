@@ -21,57 +21,6 @@
             android:textColor="#ff9800"
             android:textSize="24dp"/>
     </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/edit2">
-
-        <ImageView
-            android:id="@+id/profile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="18dp"
-            android:src="@drawable/ic_person_white_24dp"/>
-
-        <TextView
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="18dp"
-            android:layout_toRightOf="@+id/profile"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Alan Lanang Ichsan"
-            android:textColor="#fff"
-            android:textSize="22dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/username"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_toRightOf="@+id/profile"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="alan@gmail.com"
-            android:textColor="#fff"
-            android:textSize="16dp"/>
-
-        <ImageView
-            android:id="@+id/info"
-            android:layout_width="20dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
-            android:src="@drawable/arrow_dark"></ImageView>
-
-    </RelativeLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,14 +30,43 @@
             android:id="@+id/icon_ar"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_store"/>
+            android:src="@drawable/customer"/>
         <TextView
-            android:id="@+id/store"
+            android:id="@+id/customer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@id/icon_ar"
+            android:text="Customer"
+            android:textColor="#fff"
+            android:textSize="20dp"/>
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_dark"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp">
+
+        <ImageView
+            android:id="@+id/icon_set"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_store"/>
+
+        <TextView
+            android:id="@+id/store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/icon_set"
             android:text="Store"
             android:textColor="#fff"
             android:textSize="20dp"/>
@@ -99,18 +77,18 @@
             android:layout_centerVertical="true"
             android:src="@drawable/arrow_dark"/>
     </RelativeLayout>
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/btnlogout"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/btnlogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:text="Log Out"
-                android:textColor="#ff9800"
-                android:textSize="18dp" />
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Log Out"
+            android:textColor="#ff9800"
+            android:textSize="18dp" />
+    </RelativeLayout>
 </LinearLayout>
