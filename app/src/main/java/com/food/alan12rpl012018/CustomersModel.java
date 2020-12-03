@@ -53,13 +53,13 @@ public class CustomersModel {
     private String id;
 
 
-    public int getProfile() {
-        return profile;
-    }
+        public int getProfile() {
+            return profile;
+        }
 
-    public void setProfile(int profile) {
-        this.profile = profile;
-    }
+        public void setProfile(int profile) {
+            this.profile = profile;
+        }
 
     public String getName() {
         return name;

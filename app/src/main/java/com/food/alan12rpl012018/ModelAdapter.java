@@ -26,11 +26,11 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelListVie
 //        this.dataList = dataList;
 //    }
 private Context mContext;
-    private List<ModelAdapter> models;
+    private List<ModelAdapter> mData;
 
-    public ModelAdapter(Context mContext, List<ModelAdapter> models) {
+    public ModelAdapter(Context mContext, List<ModelAdapter> mData) {
         this.mContext = mContext;
-        this.models = models;
+        this.mData = mData;
     }
 
     @Override
@@ -50,11 +50,12 @@ private Context mContext;
 //        holder.txtCode.setText(dataList.get(position).getCode());
 //        holder.txtWarna.setText(dataList.get(position).getWarna());
 
+
     }
 
     @Override
     public int getItemCount() {
-        return models.size();
+        return mData.size();
     }
 
     public class ModelListViewHolder extends RecyclerView.ViewHolder{
@@ -87,12 +88,12 @@ private Context mContext;
                     txtCode = dialog.findViewById(R.id.txtkode);
                     txtwarna = dialog.findViewById(R.id.txtwarna);
 
-//
-//                    txtHargasewa.setText(models.get(getAdapterPosition()).getHargasewa());
-//                    txtMerk.setText(models.get(getAdapterPosition()).getMerk());
-//                    txtJenis.setText(models.get(getAdapterPosition()).getJenis());
-//                    txtCode.setText(models.get(getAdapterPosition()).getCode());
-//                    txtwarna.setText(models.get(getAdapterPosition()).getWarna());
+
+                    txtHargasewa.setText(mData.get(getAdapterPosition()).getHargasewa());
+                    txtMerk.setText(mData.get(getAdapterPosition()).getMerk());
+                    txtJenis.setText(mData.get(getAdapterPosition()).getJenis());
+                    txtCode.setText(mData.get(getAdapterPosition()).getCode());
+                    txtwarna.setText(mData.get(getAdapterPosition()).getWarna());
 
                     btncancel.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -109,9 +110,9 @@ private Context mContext;
                             String jenis = txtJenis.getText().toString();
                             String code = txtCode.getText().toString();
                             String warna = txtwarna.getText().toString();
-//                            String u_id = models.get(getAdapterPosition()).getId();
+                            String u_id = mData.get(getAdapterPosition()).getId();
                             if (mContext instanceof MainActivity) {
-//                                ((MainActivity)mContext).editData(u_id,hargasewa, merk, jenis, code, warna);
+                                ((MainActivity)mContext).editData(u_id,hargasewa, merk, jenis, code, warna);
                             }
                         }
                     });
@@ -135,9 +136,9 @@ private Context mContext;
                     btnaccept.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-//                            String u_id = mData.get(getAdapterPosition()).getId();
-                            if (mContext instanceof ListCustomerActivity) {
-//                                ((ListCustomerActivity)mContext).deleteData(u_id);
+                            String u_id = mData.get(getAdapterPosition()).getId();
+                            if (mContext instanceof MainActivity) {
+                                ((MainActivity)mContext).deleteData(u_id);
                             }
                         }
                     });
