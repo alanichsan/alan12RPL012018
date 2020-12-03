@@ -26,9 +26,9 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelListVie
 //        this.dataList = dataList;
 //    }
 private Context mContext;
-    private List<ModelAdapter> mData;
+    private List<ModelList> mData;
 
-    public ModelAdapter(Context mContext, List<ModelAdapter> mData) {
+    public ModelAdapter(Context mContext, List<ModelList> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -44,11 +44,12 @@ private Context mContext;
 
     @Override
     public void onBindViewHolder(ModelListViewHolder holder, int position) {
-//        holder.txtHargasewa.setText(dataList.get(position).getHargasewa());
-//        holder.txtMerk.setText(dataList.get(position).getMerk());
-//        holder.txtJenis.setText(dataList.get(position).getJenis());
-//        holder.txtCode.setText(dataList.get(position).getCode());
-//        holder.txtWarna.setText(dataList.get(position).getWarna());
+        holder.txtHargasewa.setText(mData.get(position).getHargasewa());
+        holder.txtMerk.setText(mData.get(position).getMerk());
+        holder.txtJenis.setText(mData.get(position).getJenis());
+        holder.txtCode.setText(mData.get(position).getCode());
+        holder.txtWarna.setText(mData.get(position).getWarna());
+        holder.profile.setImageResource(mData.get(position).getProfile());
 
 
     }
@@ -61,7 +62,7 @@ private Context mContext;
     public class ModelListViewHolder extends RecyclerView.ViewHolder{
 
         private Button btnedit, btnDelete, btncancel, btnaccept;
-        private EditText txtHargasewa,txtMerk,txtJenis,txtCode,txtwarna;
+        private EditText txtHargasewa,txtMerk,txtJenis,txtCode,txtWarna;
         private ImageView profile;
 
 
@@ -86,14 +87,13 @@ private Context mContext;
                     txtMerk = dialog.findViewById(R.id.txtmerk);
                     txtJenis = dialog.findViewById(R.id.txtjenis);
                     txtCode = dialog.findViewById(R.id.txtkode);
-                    txtwarna = dialog.findViewById(R.id.txtwarna);
-
+                    txtWarna = dialog.findViewById(R.id.txtwarna);
 
                     txtHargasewa.setText(mData.get(getAdapterPosition()).getHargasewa());
                     txtMerk.setText(mData.get(getAdapterPosition()).getMerk());
                     txtJenis.setText(mData.get(getAdapterPosition()).getJenis());
                     txtCode.setText(mData.get(getAdapterPosition()).getCode());
-                    txtwarna.setText(mData.get(getAdapterPosition()).getWarna());
+                    txtWarna.setText(mData.get(getAdapterPosition()).getWarna());
 
                     btncancel.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -109,10 +109,10 @@ private Context mContext;
                             String merk = txtMerk.getText().toString();
                             String jenis = txtJenis.getText().toString();
                             String code = txtCode.getText().toString();
-                            String warna = txtwarna.getText().toString();
-                            String u_id = mData.get(getAdapterPosition()).getId();
+                            String warna = txtWarna.getText().toString();
+                            String id = mData.get(getAdapterPosition()).getId();
                             if (mContext instanceof MainActivity) {
-                                ((MainActivity)mContext).editData(u_id,hargasewa, merk, jenis, code, warna);
+                                ((MainActivity)mContext).editData(id,hargasewa, merk, jenis, code, warna);
                             }
                         }
                     });

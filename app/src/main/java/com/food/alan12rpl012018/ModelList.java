@@ -11,7 +11,7 @@ public class ModelList {
     private String id;
 
 
-    public ModelList(String hargasewa, String jenis, String merk, String code, String warna) {
+    public ModelList() {
         this.hargasewa = hargasewa;
         this.merk = merk;
         this.jenis = jenis;

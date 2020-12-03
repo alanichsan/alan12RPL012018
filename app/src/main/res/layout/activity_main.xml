@@ -23,7 +23,8 @@
         android:textStyle="bold"
         android:layout_marginTop="50px"
         android:textSize="24dp"
-        android:background="#ff9800"/>
+        android:textColor="#ffff"
+        android:background="#818181"/>
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refreshlist"
         android:layout_width="match_parent"

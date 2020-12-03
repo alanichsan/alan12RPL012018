@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ModelAdapter adapter;
-    private List<ModelAdapter> models = new ArrayList<>();
+    private List<ModelList> models = new ArrayList<>();
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                                     models.add(cum);
                                     System.out.println("opo" + models.size());
                                 }
-                                ModelAdapter.notifyDataSetChanged();
+                                adapter.notifyDataSetChanged();
 
                                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
                             }
